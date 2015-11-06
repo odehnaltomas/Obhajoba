@@ -5,6 +5,7 @@
         "This file is @generated automatically"
     ],
     "hash": "15fb57f9b6fee0f40dc3d9ee5e3b138b",
+    "content-hash": "d3d1cb620c3ef0998095e2493b29fbdd",
     "packages": [
         {
             "name": "dg/adminer-custom",
