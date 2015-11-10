@@ -1,4 +1,5 @@
 {block content}
-    {$vypis->first_name}
-    {$vypis->role['role']}
+    {foreach $vypis as $jo}
+        {$jo}<br/>
+    {/foreach}
 {/block}
