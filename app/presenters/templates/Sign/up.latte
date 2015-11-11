@@ -1,0 +1,11 @@
+{block content}
+<h1 n:block="title">Registrace</h1>
+
+{control signUpForm}
+<br/>
+{ifset $hodnoty}
+    {foreach $hodnoty as $hodnota}
+        {$hodnota}<br/>
+    {/foreach}
+{/ifset}
+{/block}

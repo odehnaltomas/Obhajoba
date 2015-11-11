@@ -20,8 +20,10 @@ class UserManager extends BaseManager
 	 * @param $password
 	 * @throws DuplicateNameException
 	 */
-	public function add($username, $password)
+	public function add($values)
 	{
+		list($username, $password, $firstName, $lastName, $sex) = $values;
+
 		try {
 			$this->database->table(self::TABLE_NAME)->insert(array(
 				self::COLUMN_NAME => $username,
