@@ -6,7 +6,7 @@ use Nette\Application\UI\Presenter;
 
 
 /**
- * Základní presenter pro všechny ostatní presentery.
+ * ZÃ¡kladnÃ­ presenter pro vÅ¡echny presentery.
  * @package App\Presenters
  */
 abstract class BasePresenter extends Presenter

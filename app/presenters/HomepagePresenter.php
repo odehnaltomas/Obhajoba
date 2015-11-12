@@ -17,7 +17,7 @@ class HomepagePresenter extends BasePresenter
 	}
 
 	public function renderDefault(){
-		$this->template->vypis = $this->database->table('user')->where('id', 1)->fetch();
+		$this->template->row = $this->database->table('user')->where('id', 3)->fetch();
 	}
 
 }

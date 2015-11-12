@@ -2,6 +2,7 @@
 
 namespace App\Presenters;
 
+use App\Model\UserManager;
 use Nette;
 use Nette\Application\UI\Form;
 use Nette\Security\User;
@@ -9,6 +10,9 @@ use Nette\Security\User;
 
 class SignPresenter extends BasePresenter
 {
+
+	private $userManager;
+
 	/** @var User */
 	private $user;
 
@@ -21,8 +25,9 @@ class SignPresenter extends BasePresenter
 	);
 
 
-	public function __construct(User $user){
+	public function __construct(User $user, UserManager $userManager){
 		$this->user = $user;
+		$this->userManager = $userManager;
 	}
 
 
@@ -105,8 +110,14 @@ class SignPresenter extends BasePresenter
 	 * @param $form
 	 * @param $values
 	 */
-	public function signUpFormSucceeded($form, $values){
-		$this->template->hodnoty = $values;
+	public function signUpFormSucceeded(Form $form, $values){
+
+		try {
+			$this->userManager->add($values);
+			$form->getPresenter()->redirect('Homepage:');
+		} catch(\App\Model\DuplicateNameException $e){
+			$form->addError($e->getMessage());
+		}
 	}
 
 }

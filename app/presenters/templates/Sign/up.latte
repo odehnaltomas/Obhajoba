@@ -3,9 +3,6 @@
 
 {control signUpForm}
 <br/>
-{ifset $hodnoty}
-    {foreach $hodnoty as $hodnota}
-        {$hodnota}<br/>
-    {/foreach}
-{/ifset}
+{ifset $hodnoty}{$hodnoty}{/ifset}
+
 {/block}

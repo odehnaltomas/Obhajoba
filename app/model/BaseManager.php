@@ -18,15 +18,18 @@ use Nette;
  */
 abstract class BaseManager extends Object
 {
-    /**
-     * Instance pro práci s databází.
-     * @var Nette\Database\Context */
-    protected $database;
+    const
+        TABLE_USER = 'user',
+        USER_COLUMN_ID = 'id',
+        USER_COLUMN_NAME = 'username',
+        USER_COLUMN_PASSWORD = 'password',
+        USER_COLUMN_FIRST_NAME = 'first_name',
+        USER_COLUMN_LAST_NAME = 'last_name',
+        USER_COLUMN_SEX = 'sex',
+        USER_COLUMN_ROLE = 'role_id',
 
-    /**
-     * @param Nette\Database\Context $database
-     */
-    public function __construct(Nette\Database\Context $database){
-        $this->database = $database;
-    }
+        TABLE_USER_ROLE = 'user_role',
+        ROLE_COLUMN_ID = 'id',
+        ROLE_COLUMN_NAME = 'role';
+
 }
